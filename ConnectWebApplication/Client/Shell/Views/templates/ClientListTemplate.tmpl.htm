@@ -1,0 +1,37 @@
+﻿<script type="text/html" id="ClientListTemplate">
+    <li class="licall1 assignmentList"  data-bind="click: onBackClick" ></li>
+   <span class="widgetTitle">Client List</span>
+     <ul id="mycarousel" data-bind="foreach: $data.clientList" >
+    
+         <li  class="programClientList" data-bind="click: onClientClick"  >
+          <div class="listItemDiv">
+            <span class="dateclass">&nbsp;</span>
+              <div data-bind="css: { strikeThrough: parseInt(StrikeThrough) != 0 }" >
+                   <span class="clientName"  data-bind="text: FirstName" ></span>  
+                   <span class="clientName"  data-bind="text: LastName" ></span>  
+              </div>
+             
+          </div></li> 
+        
+         </ul>
+
+     <div data-bind="if: (totalClients() > 10)">
+         <!-- Show Previous and Next Item -->
+         <li class="licall1 myAssignmentList" >
+
+              <span data-bind="if: (currentClientListIndex() > 0)" class="prevbtnclass">
+                  <a id="prevLink" data-bind="click: previousClientList">prev</a>
+              </span>
+
+             <span class="nextbtn nextBtnStyle"  data-bind="text: displayClientNumber" >   </span>   
+
+             <span data-bind="if: !isMaxClientListIndex()" class="nextbtn">
+                 <a  data-bind="click: nextClientList">next</a>
+             </span>
+             
+
+             
+         </li>
+     </div>
+
+</script>   

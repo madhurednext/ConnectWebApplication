@@ -1,0 +1,395 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="ConnectWebApplication.MainPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+     <title>Connect</title>
+    <script src="Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <link href="../Styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/forms.css" rel="stylesheet" type="text/css" />
+    
+    <link href="../Styles/jquery-ui.css" rel="stylesheet" type="text/css" />    
+    <link href="../Styles/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-corner.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-forms.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.maskedinput-1.3.min.js" type="text/javascript"></script>
+    <script src="Scripts/Plugins/jquery.validate.pack.js" type="text/javascript"></script>
+    <script src="Scripts/Plugins/jquery.validate.js" type="text/javascript"></script>
+    <script src="Scripts/Plugins/additional-methods.js" type="text/javascript"></script>
+    <script src="Scripts/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+    <script src="Scripts/s_code.js" type="text/javascript"></script>
+    
+      <style type="text/css">
+        .pageBackground
+        {
+            /* background-image: url(Images/page_background_tile.png);
+            background-repeat: repeat-x;*/
+        }
+        body
+        {
+            background-image: url(Styles/images/page_background_tile.png);
+            background-repeat: repeat-x;
+        }
+        .leftwidgetcontainer
+        {
+            /* background-color:#415A6B ; */
+            height: 535px; /* width:270px;*/
+            float: left;
+            background-repeat: no-repeat;
+        }
+        .centerwidgetcontainer
+        {
+            height: 535px;
+            width: 550px; /* Madhu */
+            float: left;
+            margin-left: 0;
+            margin-right:30px;
+        }
+        .rightwidgetcontainer
+        {
+            /*background-color:#415A6B ;  */ /*background-image: url(Images/bgRightColumn.png);*/
+            height: 535px;
+           /* width: 280px;*/
+           /* float: left;*/
+            background-repeat: no-repeat;
+            margin-top: -25px;
+        }
+        .centercolumn
+        {
+            padding-left: 0px;
+            height: 535px; /* width:960px;*/
+            float: left;
+            width: 940px; /* Madhu*/
+        }
+        #toprightColumn {
+            float: right;
+            padding-right: 5px;
+        }
+        .cssclassclient
+        {
+            display: none;
+        }
+        .bottomcolumn
+        {
+            width: 960px;
+            padding-bottom: 0px;
+        }
+        .bottomleftcontainer
+        {
+            width: 680px;
+            float: left;
+            background-repeat: no-repeat;
+            height: 300px;
+        }
+        .bottomrightcontainer
+        {
+            float: left;
+            background-repeat: no-repeat;
+            width: 280px;
+            height: 300px;
+        }
+        .parentpanel
+        {
+            width: 200px;
+        }
+        
+       
+    </style>
+    <script type="text/javascript">   
+    
+    </script>
+
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     
+
+         <asp:ScriptManager ID="scriptManagerMain" runat="server">
+    </asp:ScriptManager>
+
+
+         <script type="text/javascript">
+
+             function resetSearch() {
+                 var my_form = $('#mainForm');
+                 var data = {};
+                 var fName = $("#txtFname");
+                 var lName = $("#txtLname");
+                 var ssn = $("#txtSSN");
+                 var dob = $("#txtDOB");
+                 //alert(fName);
+                 $("#mainForm input[type=text]").each(function () {
+                     var name = $(this).attr('id');
+                     //alert(name);
+
+                     if (name == 'txtFname') {
+                         $(this).val('');
+                     }
+                     if (name == 'txtLname') {
+                         $(this).val('');
+                     }
+                     if (name == 'txtSSN') {
+                         $(this).val('');
+                     }
+                     if (name == 'txtDOB') {
+                         $(this).val('');
+                     }
+
+                 });
+             }
+             function validateandSubmit() {
+                 window.event.returnValue = false;
+                 var readyToSubmit = true;
+                 var validInput = true;
+                 var validDate = true;
+
+                 var result = ValidateForm();
+
+                 readyToSubmit = result;
+
+                 fName = jQuery.trim($("#txtFname").val());
+                 lName = jQuery.trim($("#txtLname").val());
+                 ssn = jQuery.trim($("#txtSSN").val());
+                 dob = jQuery.trim($("#txtDOB").val());
+                 if (dob == "__/__/____") {
+                     dob = "";
+                 }
+                 if (ssn == "____") {
+                     ssn = "";
+                 }
+                 var hdnNewSearch = $("#hdnNewSearch");
+                 if (hdnNewSearch != null) {
+                     hdnNewSearch.val("true");
+                 }
+                 if (fName.length == 0)
+                     readyToSubmit = false
+                 if (lName.length == 0)
+                     readyToSubmit = false
+                 if ((!isValidSSN4(ssn)) && (dob.length == 0)) {
+                     readyToSubmit = false
+                 }
+                 if (!isValidName(fName))
+                     validInput = false;
+                 if (!isValidName(lName))
+                     validInput = false;
+                 //if dob is not empty then validate the date.
+                 if (dob.length != 0) {
+                     if (!isValidDate(dob))
+                         validDate = false;
+                 }
+                 if (!validInput) {
+                     //                  $('#messageDiv').html("First name and last name cannot contain a number or special character, please refine your entry.");
+                     //                  $("#messageDiv").dialog({
+                     //                      buttons: {
+                     //                          'Ok': function () { $(this).dialog("close"); }
+                     //                      }
+                     //                  });
+                     //document.getElementById('messageDiv').innerHTML = "Please validate the information you entered.";
+                     //                    $('#messageDiv').html("First name and last name cannot contain a number or special character, please refine your entry.");
+                     //                    $("#messageDiv").dialog();
+                     //                    $("#messageDiv").dialog("option", "buttons", { "Ok": function ()
+                     //                    { $(this).dialog("close"); }
+                     //                    });
+                     //                    
+                 } else
+                     if (!validDate) {
+                         //                      $('#messageDiv').html("Invalid date entered, please refine your entry.");
+                         //                      $("#messageDiv").dialog({
+                         //                          buttons: {
+                         //                              'Ok': function () { $(this).dialog("close"); }
+                         //                          }
+                         //                      });
+
+                         //                    //document.getElementById('messageDiv').innerHTML = "Please validate the information you entered.";
+                         //                    $('#messageDiv').html("Invalid date entered, please refine your entry.");
+                         //                    $("#messageDiv").dialog();
+                         //                    $("#messageDiv").dialog("option", "buttons", { "Ok": function ()
+                         //                    { $(this).dialog("close"); }
+                         //                    });
+                         //                    
+                     }
+                     else {
+                         if (!readyToSubmit) {
+                             //popup("Please enter client information in the first name, last name and Last 4 SSN or DOB fields.");
+                             //                          $('#messageDiv').html("Please enter client information in the Last 4 SSN or Date of birth fields.");
+                             //                          $("#messageDiv").dialog({
+                             //                              buttons: {
+                             //                                  'Ok': function () { $(this).dialog("close"); }
+                             //                              }
+                             //                          });
+
+                             //                        // document.getElementById('messageDiv').innerHTML = "Please enter client information in the first name, last name and Last 4 SSN or DOB fields.";
+                             //                        $('#messageDiv').html("Please enter client information in the first name, last name and Last 4 SSN or DOB fields.");
+                             //                        $("#messageDiv").dialog();
+                             //                        $("#messageDiv").dialog("option", "buttons", { "Ok": function ()
+                             //                        { $(this).dialog("close"); }
+                             //                        });
+
+                         }
+                         else {
+                             var pageTitle = GetPageTitle();
+                             var variableName = pageTitle + ">" + GetOmnitureVariableName(fName, lName, ssn, dob) + ">SearchButton";
+                             CallOmnitureWS(pageTitle, variableName);
+                             callGetClientSearchList(fName, lName, ssn, dob);
+                             // GetClientSearchList(fName, lName, ssn, dob);
+                             /*Search control can be loaded in any page, but the results should be loaded only */
+                             /* on the default page. So we use cross page posting for if the control is from any */
+                             /* other page*/
+                             //                        if (location.URL == "Default.aspx") {
+                             //                            __doPostBack('UpdatePnlSearchResult', '');
+                             //                        }
+                             //                        else {
+                             //                            WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('UpdatePnlSearchResult', '', false, '', '/Connect/Default.aspx', false, true));
+                             //                        }
+                         }
+                     }
+             }
+             function isValidName(value) {
+                 var result = false;
+                 //check first character should ONLY be alpha
+                 var regExpAlphs = /^[a-zA-Z]+$/;
+
+                 if (!regExpAlphs.test(value.charAt(0))) {
+                     result = false;
+                 } else {
+
+                     // regular expression to match only alphanumeric characters and spaces
+                     var regExpressionValue = /^[\w \-\']+$/;
+
+                     if (regExpressionValue.test(value)) {
+                         result = true;
+                     } else {
+                         result = false;
+                     }
+                 }
+                 return result;
+             }
+             //valid date check
+             function isValidDate(datestring) {
+                 if (datestring.match(/^(?:(0[1-9]|1[012])[\- \/.](0[1-9]|[12][0-9]|3[01])[\- \/.](19|20)[0-9]{2})$/)) {
+                     //Check for leap year
+                     var month = datestring.substring(0, 2);
+                     var day = datestring.substring(3, 5);
+                     var year = datestring.substring(6, 10);
+                     var date = new Date(year, (month - 1), day);
+                     var DateYear = date.getFullYear();
+                     var DateMonth = date.getMonth();
+                     var DateDay = date.getDate();
+                     if (DateYear == year && DateMonth == (month - 1) && DateDay == day) {
+                         return true;
+                     }
+                     else {
+                         return false;
+                     }
+                     //return true;
+                 }
+                 else {
+                     return false;
+                 }
+             }
+             function isValidSSN4(ssn4) {
+                 var ssn4Number = Number(ssn4);
+                 if ((ssn4Number < 10000) && (ssn4Number > 0)) {
+                     return true;
+                 }
+                 return false;
+             }
+             // asyc call to get phone number from the given personID
+             // retunr a block of HTML content from contact.ashx to dynamically build phone number div
+             //
+             function getPhoneNumber(Id) {
+                 var jqxhr = $.get("contact.ashx", { personId: Id }, function (data) {
+                     $('.block').html(data);
+                 })
+             }
+
+             function btnsearch_onclick() {
+             }
+
+             function LeftColumnCollapse() {
+                 this.leftColumn.className = "hide";
+                 this.leftColumnB.className = "";
+             }
+
+             function LeftColumnExpand() {
+                 this.leftColumn.className = "";
+                 this.leftColumnB.className = "hide";
+             }
+    </script>
+    <div class="pageBackground">
+        <div id="header">
+            <div id="headerRight">
+                <img alt="H&amp;R Block" border="0" height="28" src="<%= ResolveClientUrl("../Styles/images/logo.png")%>"
+                    width="95" />
+            </div>
+            <div id="headerLeft">
+                <h1>
+                    Hi
+                    <asp:Label runat="server" ID="LblUsrNme"></asp:Label>!</h1>
+
+                   
+            </div>
+          
+           <div id="savedMessage" style="float:left; padding-top:12px; padding-left: 30px;"> </div>
+            <div id="headercenter">
+                <h4>
+                    <asp:Label runat="server" ID="LblLogInas" CssClass="cssclassclient"></asp:Label>
+                    <asp:Label ID="clientdataurl" CssClass="cssclassclient" runat="server"></asp:Label>
+                    <asp:Label ID="clientdocurl" CssClass="cssclassclient" runat="server"></asp:Label>
+                    <asp:Label ID="lblContactDetailsServiceURL" CssClass="cssclassclient" runat="server"></asp:Label>
+                    <asp:Label ID="lblAuthenticationServiceURL" CssClass="cssclassclient" runat="server"></asp:Label>
+                    <asp:Label ID="psid" CssClass="cssclassclient" Text="86089"  runat="server"></asp:Label>
+                    <asp:Label ID="ssoid" CssClass="cssclassclient" Text="9999" runat="server"></asp:Label>
+                    <asp:Label ID="Officeid" CssClass="cssclassclient  office" Text="9999" runat="server"></asp:Label>
+                    <asp:Label ID="RoleIds" CssClass="cssclassclient" Text="3" runat="server"></asp:Label>
+                     <asp:Label ID="connectLogId" CssClass="cssclassclient" runat="server"></asp:Label>
+                </h4>
+            </div>
+        </div>
+        
+        <div class="centercolumn">
+            <!--Left widget Container -->
+            <div class="leftwidgetcontainer">
+                <asp:ContentPlaceHolder ID="leftContentplaceholder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--Center widget Container -->
+            <div class="centerwidgetcontainer">            
+                <asp:ContentPlaceHolder ID="centerContentplaceholder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--Right widget container -->
+            <div class="rightwidgetcontainer" >                
+                <asp:ContentPlaceHolder ID="rightContentplaceholder" runat="server">
+                </asp:ContentPlaceHolder>                        
+            </div>           
+        </div>
+        <div id="toprightColumn">
+            <p>Icon</p>
+        </div> 
+        <div class="bottomcolumn hide">
+
+            <!--Bottom left widget container-->
+            <div class="bottomleftcontainer">
+                <asp:ContentPlaceHolder ID="bottomleftcontent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--Bottom right widget container-->
+            <div class="bottomrightcontainer">
+                <asp:ContentPlaceHolder ID="bottomrightcontent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    <div class="clear">
+    </div>
+    </div>
+   
+
+    </form>
+</body>
+</html>

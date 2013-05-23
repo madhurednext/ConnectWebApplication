@@ -1,0 +1,112 @@
+﻿ <!-- Start OF Tab 2 -->
+                <div class="tab-pane" id="tab2">
+                    <div class="primaryContainer" style="padding: 0 0 0 0;">
+                        
+                        <div class="blueMiddle" style="background-color: #415a6b;">
+                        <div >
+                    <img alt="Collapse Search"  border="0" src="Styles/images/ctrlSearch.png" />
+                </div>
+                           
+
+                                <div class="searchForm">
+                    <div class="clear">
+                    </div>
+                            <input type="hidden" name="postData" />
+                            <div class="searchFormGroup">
+                                <div class="labelCol">
+                                    <label for="searchHeader_txtFname">
+                                        First Name</label>
+                                </div>
+                                <div class="inputCol" onkeypress="SubmitOnEnterKey()">
+                                    <input type="text" class="widthName firstname" id="txtFname" tabindex="1" name="txtFname"/>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="searchFormGroup">
+                                <div class="labelCol">
+                                    <label for="searchHeader_txtLname">
+                                        Last Name</label>
+                                </div>
+                                <div class="inputCol" onkeypress="SubmitOnEnterKey()">
+                                    <input type="text" class="widthName lastname" id="txtLname" tabindex="2" name="txtLname" />
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                          
+
+                            <div class="searchFormGroup">
+                                <div class="labelCol">
+                                    <label for="searchHeader_txtSSN">
+                                        Last 4 SSN</label>
+                                </div>
+                                <div class="inputCol" onkeypress="SubmitOnEnterKey()">
+                                    <input type="text" class="width4SSN" name="txtSSN" id="txtSSN" tabindex="3" />
+                                    <span class="labelOr">- OR -</span>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div> 
+                            <div class="searchFormGroup">
+                                <div class="labelCol">
+                                    <label for="searchHeader_txtDOB">
+                                        Date of Birth</label>
+                                </div>
+                                <div class="inputCol" onkeypress="SubmitOnEnterKey()">
+                                    <input type="text" class="widthDate" id="txtDOB" name="txtDOB" tabindex="4" />
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                            <div class="searchFormGroup">
+                                <div class="labelCol">
+                                </div>
+                                <div class="inputCol">
+                                    <button class="btnSearch" id="btnsearch" tabindex="5" data-bind="click: function() { viewModel.clientSearchTabClicked() }">
+                                        <span class="hide">Search</span>
+                                    </button>
+                                    <button class="btnClear" id="btnclear" tabindex="6" data-bind="click: function() { viewModel.resetClientSearch() }" >
+                                        <span class="hide">Clear</span>
+                                    </button>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div id="messageDiv">
+                                </div>
+                                    
+                        
+                                </div>
+                        
+                        
+                            </div>
+                        
+                            <div class="clear">
+                            </div>
+                            </div>
+                        </div>
+
+                          
+                        
+                    </div>
+                           <!-- End OF Tab 2 -->
+
+                     <!-- Start OF Tab 3 -->
+                    <div class="tab-pane" id="tab3">
+                    <!-- Start OF officetabContainer -->
+                    <div id="officetabContainer" class="officetabContainer">
+                        
+                        <div id="officeTabWidgetContainer" class="widgetcontainer">
+                            <div id="officeTabSelectedWidgetDiv" class="widget" style="padding-left: 3px; height: 540px;" data-bind="template:{name:viewModel.officeTabWidgetView}">
+                            </div>
+                             <div class="clear" ></div>
+                            </div>
+                          
+                          <div class="clear" ></div>
+                       
+                    </div>
+                           <!-- End OF officetabContainer -->
+                    <div class="clear" ></div>
+                </div>
+
+                <!-- End OF Tab 3 -->

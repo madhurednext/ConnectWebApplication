@@ -1,0 +1,115 @@
+﻿
+body
+{
+	
+}
+
+#MasterContainer
+{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: left;
+}
+
+#MasterContainer A:link
+{
+	text-decoration: none;
+	color: Blue;
+}
+
+#MasterContainer A:visited
+{
+	text-decoration: none;
+	color: Blue;
+}
+
+#MasterContainer A:active    
+{
+    text-decoration: none;
+    color: Red;
+}
+
+#MasterContainer A:hover 
+{
+    text-decoration: underline;
+    color: Red;
+}
+
+
+.listView
+{
+	border: solid 0px #7f7f7f;
+    border-collapse: collapse;	
+    width: 100px;
+}
+
+.listView th 
+{
+    
+    background-color:#4b6c9e;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    padding: 4px 5px 4px 10px;
+    text-align: center;
+    color: White;
+	
+}  
+
+.listView th a
+{
+	
+    font-weight: bold;
+	text-decoration: none;
+	display: inline;
+}
+
+/* Required for sort direction indicator */
+.listView th img
+{
+	display: inline;
+}
+
+.listView td 
+{
+	color: #333333;
+    padding: 4px 10px 4px 10px;
+    border-bottom: solid 0px #BBD9EE;
+    
+}
+
+.listView .itemRow
+{
+    background-color: #fff;
+} 
+
+.listView .altItemRow
+{
+    background-color: #DFE2F3;
+} 
+
+.listView .selItemRow
+{
+    background-color: #FAFAD2;
+} 
+
+.listView .footerRow
+{
+    background-color: #e5e5e5;
+}  
+
+.listView .footerAltRow
+{
+    background-color: #fff;
+}  
+
+.listView .rownum
+{
+    text-align: center;
+    padding-left: 0px;
+    font-weight: bold;
+    color: #333333;
+}

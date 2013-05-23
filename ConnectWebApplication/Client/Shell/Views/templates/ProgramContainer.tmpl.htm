@@ -1,0 +1,43 @@
+﻿<script type="text/html" id="ProgramContainer"> 
+   
+<div id="programContainerDiv" data-bind="with: $data"  >
+    <!---->
+<div class="widgethead"> 
+  <p class="titleRight"></p> 
+  <div class="clear"></div>  
+  </div>
+  <div data-bind="if: ($parent.currentTemplate().name == 'ProgramListTemplate')"  class="widgetsubhead"> 
+  <h2> 
+  <span class="widgetTitle" data-bind="text: $data[$parent.currentTemplate().viewModel].title"></span>  
+                  </h2>
+   </div>
+  <div class="widgetbody" >
+   <div id="selectedTabDiv" >
+
+     </div> 
+     
+       
+     <div data-bind="if:  $parent.isHalosAuthorized" >
+
+      <!--   <div id="wrap" data-bind="template: { name: $parent.currentTemplate().name, data: $data.programInfoViewModel }">
+
+
+         </div>-->
+
+          <div id="wrap" data-bind="template: { name: $parent.currentTemplate().name, data: $data[$parent.currentTemplate().viewModel] }">
+
+
+         </div>
+         
+     </div>
+         
+   
+     
+      
+
+</div>
+ <!-- End of   widgetbody -->
+  <div class="widgetfoot"></div> 
+   </div>
+
+</script>

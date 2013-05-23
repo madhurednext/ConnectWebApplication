@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Full featured example using jQuery plugin</title>
+<!-- Load jQuery -->
+<script src="../jquery-1.4.4.min.js" type="text/javascript"></script>
+<!-- Load TinyMCE -->
+<script type="text/javascript" src="tiny_mce.js"></script>
+<script type="text/javascript">
+    tinyMCE.init({
+        // General options
+        mode: "exact",
+        elements: "elm1",
+        theme: "advanced",
+        skin: "o2k7",
+        skin_variant: "black",
+
+        // Theme options
+        theme_advanced_buttons1: "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2: "",
+        theme_advanced_toolbar_location: "top",
+        theme_advanced_toolbar_align: "left",
+
+        
+        // Drop lists for link/image/media/template dialogs
+        template_external_list_url: "lists/template_list.js",
+        external_link_list_url: "lists/link_list.js",
+        external_image_list_url: "lists/image_list.js",
+        media_external_list_url: "lists/media_list.js"
+
+    });
+    
+</script>
+<!-- /TinyMCE -->
+
+</head>
+<body>
+
+<form  >
+	<div id="test">
+        <div class="close" style="text-align:right">
+        <a href="javascript:;" onclick="parent.$.fancybox.close(); ">
+        <img alt="Close" border="0" height="20" src="/Connect/Styles/images/ctrlCloseOverlay.png"   width="20" />
+        </a>
+        </div>
+	    <textarea id="elm1" name="elm1" rows="15" cols="80" style="width: 40%">
+		&lt;p&gt;
+			This is some example text that you can edit inside the &lt;strong&gt;TinyMCE editor&lt;/strong&gt;.
+		&lt;/p&gt;
+		&lt;p&gt;
+		Nam nisi elit, cursus in rhoncus sit amet, pulvinar laoreet leo. Nam sed lectus quam, ut sagittis tellus. Quisque dignissim mauris a augue rutrum tempor. Donec vitae purus nec massa vestibulum ornare sit amet id tellus. Nunc quam mauris, fermentum nec lacinia eget, sollicitudin nec ante. Aliquam molestie volutpat dapibus. Nunc interdum viverra sodales. Morbi laoreet pulvinar gravida. Quisque ut turpis sagittis nunc accumsan vehicula. Duis elementum congue ultrices. Cras faucibus feugiat arcu quis lacinia. In hac habitasse platea dictumst. Pellentesque fermentum magna sit amet tellus varius ullamcorper. Vestibulum at urna augue, eget varius neque. Fusce facilisis venenatis dapibus. Integer non sem at arcu euismod tempor nec sed nisl. Morbi ultricies, mauris ut ultricies adipiscing, felis odio condimentum massa, et luctus est nunc nec eros.
+		// tinymce.EditorManager.execCommand('mceAddControl', true, 'elm1');
+        //  tinymce.EditorManager.execCommand('mceRemoveControl', true, 'elm1'); 
+        &lt;/p&gt;
+	    </textarea>
+	    <br />
+	<input type="submit" name="save" value="Submit" />
+	<input type="reset" name="reset" value="Reset" />                                      
+                                        </div>
+</form>
+
+</body>
+</html>

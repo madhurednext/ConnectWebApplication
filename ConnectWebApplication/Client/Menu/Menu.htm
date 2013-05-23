@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+   <!-- Start OF Left Tab Div -->
+<div id="leftTabDiv" class="tabbable tabs-left">
+            
+            <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab" ><img class="leftIcon" src="Styles/images/iconAssignments.png" border="0" /></a></li>
+                   
+            </ul>
+            <!-- Start OF Tab Content -->
+            <div class="tab-content" style="overflow:hidden;">
+                <!-- Start OF Tab 1 -->
+                  <div class="tab-pane active" id="tab1">
+                    <div id="lefttabcontainerparent" class="lefttabcontainerparent">
+                        
+                        <div id="widgetcontainer" class="widgetcontainer">
+                            <div class="expandcollapse hide">
+                            </div>
+
+                            <div id="tabSelectWidgetDiv" class="widget" style="padding-left: 3px"
+
+                                 data-bind="template: { name: 'ProgramContainer', data: connect.appViewModel.assignmentViewModel } " >
+
+                                
+                                </div>
+
+                           
+
+                            <!--<div id="tabSelectWidgetDiv" class="widget" style="padding-left: 3px" data-bind="template: { name: 'ProgramTemplate' }, data: connect.appViewModel.assignmentViewModel, templateOptions:  }">
+                            </div>-->
+                        </div>
+                    </div>
+                  </div>
+                <!-- End OF Tab 1 -->
+
+           
+
+                  
+
+                </div>
+                 <!-- End OF Tab Content -->
+            </div>
+             <!-- End  OF Left Tab Div -->
+
+</body>
+</html>

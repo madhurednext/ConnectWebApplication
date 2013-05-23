@@ -1,0 +1,24 @@
+﻿<script type="text/html" id="ProgramListTemplate">
+  
+
+     <ul id="mycarousel" data-bind="foreach: $data.programList" >
+     
+      
+         <li class="licall1 assignmentListItem"  
+           data-bind="click: $parent.onProgramClick, css: { pointer: parseInt(ClientCount) > 0 } " >
+
+          <div class="listItemDiv" >
+              <span class="spanName assignmentCampaignGroupName" data-bind="text: CampaignGroupName" ></span>  
+             <div class="programItemCount">
+                   <span class="assignmentClientCount" data-bind="text: ClientCount" >  </span>&nbsp;Client (s)&nbsp;
+                   <span class="nextbtnclass">
+                   <img   class="ext" src="Styles/images/ctrlListNext.png"   ></img>
+                  </span>
+              </div>
+           </div>
+           </li>
+            
+     
+       </ul>
+  
+</script>   

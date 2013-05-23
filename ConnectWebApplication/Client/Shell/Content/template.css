@@ -1,0 +1,532 @@
+﻿/* Start of assignmenttabTemplate */
+
+
+
+/* End of assignmenttabTemplate */
+
+/*
+.contactProfileinfoAppointment {background-color:#FAFAFA; border:1px solid #EDEDED; margin:4px 0 0 -1px; padding:1px 0; width:100%;}
+.contactProfileinfoAppointment p {font-weight:bold; margin:0; padding:7px 10px;}
+.contactProfileinfoAppointment span {color:#888; font-size:11px;}
+.contactProfileinfoAppointment .col30 {float:left; width:30%}
+.contactProfileinfoAppointment .col40 {float:left; width:40%}*/
+.upComingAptsDiv { padding-top: 15px; }
+.contactProfileinfoService {width:100%; height:50px;}
+.contactProfileinfoService p { margin: 0px 0px 1px 0px; }
+.contactProfileinfoService span { font-weight:bold; font-size:11px;}
+.contactProfileinfoService .col30 {float:left; width:23%}
+.contactProfileinfoService .col40 {float:left; width:38%}
+.contactProfileinfoService .ContactProfileARApptLinkClick {
+   text-decoration: underline;
+  color: #0000ff;
+  cursor:pointer;
+}
+.apptReminderProfileComingAptsDiv {
+  height: 50px; overflow:auto;
+}
+.contactProfileinfoService .col60 {float:left; width:39%}
+
+/* Start of AssignmentTemplate */
+
+.assignmentListItem
+{
+     background-color: White;
+     color:Black;
+     list-style-type: none;
+     float: left;
+     width: 241px;
+     height: 50px;
+     margin-bottom: 1px;
+     margin-left: 0px;
+}
+
+
+.listItemDiv{
+ 
+display: block;
+font-family: @Arial Unicode MS;
+font-weight: bold;
+padding-left: 10px;
+
+}
+
+.clientName {
+    text-align: left;
+    padding-top: 0px;
+    line-height: 13px;
+    margin: 0;
+   
+}
+.widgetsubhead{
+   
+    
+}
+
+.widgetTitle {
+   color: #fff;
+   padding-left: 20px;
+}
+
+.nextbtnclass {
+  padding-right: 10px;
+}
+.pointer 
+{
+    cursor: pointer;
+}
+
+.assignmentClientCount 
+{
+    font-family:Arial, Sans-Serif;   
+    padding-left:10px;
+}
+
+.assignmentCampaignGroupName 
+{
+    width: 140px;
+    line-height: 30px;
+}
+
+.spouseSpanishIndicator {
+    margin-top:2px;
+}
+
+/* End of AssignmentTemplate */
+
+.headerTenure span {
+color: #000;
+font-size: 14px;
+}
+
+.headerTenure .tenure {
+color: #6BB623;
+font-size: 14px;
+}
+.headerTenure .tenuredata {
+ color : #000;
+}
+
+
+/* Start of clientDataTemplate */
+
+.noContactAssignment 
+{
+     font-family: Segoe UI; 
+     font-size: 11px;
+     font-weight: normal;
+     font-style: normal;
+     text-decoration: none; 
+     color: #000000;   
+}
+
+.noUpcomingAppointments
+{
+    font-family: Segoe UI; 
+    font-size: 11px;
+    font-weight: normal; 
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+}
+
+.setAppointment 
+{
+    padding:0;
+    margin:0;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.setAppointment a
+{
+    cursor: pointer;
+}
+
+.recordNotAvailable
+{
+    font-family: Segoe UI;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none; 
+    color: #000000;
+}
+
+/* End of clientDataTemplate */
+
+/* Start of clientHeaderTemplate */
+.closeImage 
+{
+    float:right; 
+    margin-right:-35px;
+    margin-top:-11px;
+}
+
+.spanishDeceased
+{
+    margin-top: 1px;
+}
+/* End of clientHeaderTemplate */
+
+/* Start of clientSearchDetailsTemplate */
+.verticalTop 
+{
+    vertical-align: top;
+    
+}
+#clientSearchPanel {
+width: 625px;
+}
+/* End of clientSearchDetailsTemplate */
+
+/* Start of clientSearchHeaderTemplate */
+.searchTableStyle
+{
+    top:25px;
+    max-height:100%;
+}
+/* End of clientSearchHeaderTemplate */
+
+
+/* Start of contactActivity */
+
+/* End of contactActivity*/
+
+/* Start of documentTemplate */
+
+/* End of documentTemplate */
+
+/* Start of MyAssignments */
+.assignmentList
+{
+    list-style-type: none;
+    cursor:pointer; 
+    float: left; 
+    background:url('../../../../Styles/images/ctrlBack.png') no-repeat;
+    width:239px;
+    margin-bottom:1px;
+    background-color:#AEC0C5; 
+    height:21px;
+    border:1px solid #E0EFF4;
+}
+.myAssignmentList
+{
+ text-align:center; 
+ cursor:pointer; 
+ list-style-type: none;
+ float: left; 
+ width:239px; 
+ margin-bottom:1px; 
+ background-color:#AEC0C5;
+ border:1px solid #E0EFF4;
+}
+
+.nextBtnStyle 
+{
+  padding-top:0px;
+}
+
+/* End of MyAssignments */
+
+/* Start of ProgramClientTemplate */
+
+.programClientList 
+{
+    background-color:white;
+    color:black;
+    list-style-type: none;
+    float: left; 
+    width:241px; 
+    height:40px;
+    margin-bottom:1px;
+    margin-left:0px;
+    cursor: pointer;
+}
+
+.strikeThrough
+{
+    text-decoration:line-through;
+}
+
+/* End of ProgramClientTemplate */
+
+/* Start of ResultPanel */
+
+.floatLeft 
+{
+    float:left;
+}
+.campaignGroupContainer
+{
+  /* height:20px; */
+}
+.campaignGroupNameHeader
+{
+    color:#009900; 
+    font-size:16px; 
+    font-weight:bold;    
+}
+
+
+
+.phoneNumber
+{
+  clear:both; 
+  padding:0;
+  color:#000; 
+  font-size:14px;
+  font-weight:bold; 
+  margin:10px 0 0;    
+}
+
+
+
+.keyMessagesContainer 
+{
+   border:1px; 
+   width:220px;    
+   float:left;
+   position:relative;
+}
+
+.cpDocumentContainer
+{
+   border:1px; 
+   width:170px;    
+   float:left;
+   position:relative;
+}
+
+.cpDocListDiv
+{
+    height: 69px;
+    overflow:auto;
+    position: relative;
+}
+
+.keyMessagesListDiv
+{
+     height: 60px;
+     overflow:auto;
+}
+
+.lineHeight100P {
+    line-height: 100%;
+}
+
+.PdfImage {
+    vertical-align : middle;
+    position: relative;
+    float:left;
+    height:25px;
+    padding-right:5px;
+    cursor:pointer; 
+}
+.cpDocLabel
+{
+  text-decoration: underline;
+  color: #0000ff;
+  cursor:pointer;
+  text-align: justify;
+ position : absolute;
+ padding-left: 5px; 
+}
+
+
+.PdfImageHistory {
+    vertical-align : middle;
+    position: relative;
+    float:left;
+    height:25px;
+    padding-right:5px;
+    cursor:pointer; 
+}
+.cpDocLabelHistory
+{
+  text-decoration: underline;
+  color: #0000ff;
+  cursor:pointer;
+  text-align: justify;
+ position : absolute;
+ padding-left: 5px; 
+}
+
+
+
+.keyMessagesCaption 
+{
+    padding:0;
+    margin:0;
+    font-size:12px;
+    font-weight:bold;
+    color:#000;
+}
+
+
+
+.keyMessagesDescriptionTest
+{
+ font-size:11px;
+ color:#000;
+ padding:3px 0 0;
+ margin:0;    
+}
+
+.contactResultsCaption
+{
+ clear:both; 
+ padding:0; 
+ color:#000; 
+ font-size:16px;
+ font-weight:bold;
+ margin:2px 0 2px 2px;    
+}
+
+.noBorder
+{
+ border:none; 
+}
+
+.contactResultListContainer
+{
+    margin-left:20px;
+}
+
+.contactResultList 
+{
+    width:270px;
+    float:left;
+    margin:0;
+    padding:6px 0 0;
+}
+
+.contactResultName 
+{
+ color:#000;
+}
+
+.notesCaption
+{
+    padding:0;
+    margin:10px 0 0;
+    font-size:12px;
+    font-weight:bold;
+    color:#000;
+}
+
+.saveBtnStyle
+{
+    margin:6px 0 1px -2px;
+}
+
+.setAppointmentCaption
+{
+    padding:0;
+    margin:0;
+    font-size:12px;
+    font-weight:bold;
+    color:#000;
+    padding-top:18px;
+    padding-left:10px;
+}
+
+.setAppointmentCaption a
+{
+    cursor: pointer;
+}
+
+/* End of ResultPanel */
+
+/* Start of selectedTab */
+
+/* End of selectedTab */
+
+/* Start of serviceActivityTemplate */
+
+/* End of serviceActivityTemplate */
+
+/* Start of tabSelected */
+
+/* End of tabSelected */
+
+/* Start of task */
+
+/* End of task */
+
+/* Start of UpComingAptTemplate */
+
+/* End of UpComingAptTemplate */
+
+
+/* Start of officeListTemplate */
+
+.officeListItem
+{
+     background-color: White;
+     color:Black;
+     list-style-type: none;
+     float: left;
+     width: 241px;
+     height: 40px;
+     margin-bottom: 1px;
+     margin-left: 0px;
+}
+
+.officeIdName 
+{
+    width: 200px;
+    line-height: 30px;
+}
+.officeBackButton
+{
+     list-style-type: none;
+    cursor:pointer; 
+    float: left; 
+    background:url('../../../../Styles/images/ctrlBack.png') no-repeat;
+    
+    width:239px;
+    margin-bottom:1px;
+    background-color:#AEC0C5; 
+    height:21px;
+    border:1px solid #E0EFF4;
+}
+
+.officetaxproListItem
+{
+     background-color: White;
+     color:Black;
+     list-style-type: none;
+     float: left;
+     width: 241px;
+     height: 40px;
+     margin-bottom: 1px;
+     margin-left: 0px;
+}
+
+.officeProgramClientListItem
+{
+   
+     background-color: White;
+     color:Black;
+     list-style-type: none;
+     float: left;
+     width: 241px;
+     height: 40px;
+     margin-bottom: 1px;
+     margin-left: 0px;
+
+}
+
+.officeTaxProList
+{
+ text-align:center; 
+ cursor:pointer; 
+ list-style-type: none;
+ float: left; 
+ width:239px; 
+ margin-bottom:1px; 
+ background-color:#AEC0C5;
+ border:1px solid #E0EFF4;
+}
+
+/* End of officeListTemplate */

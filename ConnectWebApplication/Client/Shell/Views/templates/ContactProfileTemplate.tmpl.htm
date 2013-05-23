@@ -1,0 +1,50 @@
+﻿<script type="text/html" id="ContactProfileTemplate"> 
+          <div data-bind="ifnot: isContactProfileDataSet" >
+ 
+                 <div>
+                  <span class="noContactAssignment">&nbsp;&nbsp;&nbsp;No contact assignments.</span>
+                 </div>
+
+          </div>
+
+
+    <!-- Start of Demo -->
+<div class="demo" data-bind="if: isContactProfileDataSet"  >
+     <!-- Start of campaignGroupContainer -->
+	<div data-bind="with :  contactProfileResult" class="campaignGroupContainer">  
+   
+         <div data-bind="ifnot: isClientStrikeThrough" >
+
+             <div id="topContactProfile" style="width: 620px;" >
+				
+                 <div id="campaignGroupDetails" style="width: 210px; float: left; height: 60px; position: relative;">
+					 <h2 class="campaignGroupNameHeader"><span data-bind="text : CampaginGroupName" ></span></h2>
+					 <p  class="phoneNumber"><span data-bind="text : PhoneNumber" > </span></p>                     
+			    </div> <!-- End of campaignGroupDetails -->
+
+                <div class="keyMessagesContainer">                                         
+					 <p class="keyMessagesCaption">Key Messages:</p>                     
+					 <div data-bind="foreach : KeyMessagesList" class="keyMessagesListDiv">
+                      
+						<p class="keyMessagesDescriptionTest">
+                            - <span data-bind="text : m_key_message_desc_txt" > </span> 
+                        </p>  
+					  
+                      </div> <!-- End of KeyMessage List -->
+				</div>  <!-- End of KeyMessage Container -->
+
+
+                 </div> <!-- End of topContactProfile -->
+         </div> <!-- End of Not Strike Through -->
+
+   </div><!-- End of campaignGroupContainer -->
+    <div class="clear" > </div>
+</div>  <!-- End of Demo -->
+        
+           
+
+</script>
+
+
+
+

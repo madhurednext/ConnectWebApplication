@@ -1,0 +1,244 @@
+/* jQuery treeTable stylesheet
+ *
+ * This file contains styles that are used to display the tree table. Each tree
+ * table is assigned the +treeTable+ class.
+ * ========================================================================= */
+
+/* jquery.treeTable.collapsible
+ * ------------------------------------------------------------------------- */
+.treeTable tr td .expander {
+  cursor: pointer;
+  padding: 0;
+  zoom: 1; /* IE7 Hack */
+}
+
+.treeTable tr td a.expander {
+  background-position: left center;
+  background-repeat: no-repeat;
+  color: #000;
+  text-decoration: none;
+}
+
+.treeTable tr.collapsed td a.expander {
+  background-image: url(images/documentslist/toggle-expand-dark.png);
+}
+
+.treeTable tr.expanded td a.expander {
+  background-image: url(images/documentslist/toggle-collapse-dark.png);
+}
+
+/* jquery.treeTable.sortable
+ * ------------------------------------------------------------------------- */
+.treeTable tr.selected, .treeTable tr.accept {
+background-color: #3875d7;
+}
+
+.treeTable tr.selected a.expander, .treeTable tr.accept a.expander {
+  color: #fff;
+}
+
+.treeTable tr.collapsed.selected td a.expander, .treeTable tr.collapsed.accept td a.expander {
+  background-image: url(images/documentslist/toggle-expand-light.png);
+}
+
+.treeTable tr.expanded.selected td a.expander, .treeTable tr.expanded.accept td a.expander {
+  background-image: url(images/documentslist/toggle-collapse-light.png);
+}
+
+.treeTable .ui-draggable-dragging {
+  color: #000;
+  z-index: 1;
+}
+
+/* Layout helper taken from jQuery UI. This way I don't have to require the
+ * full jQuery UI CSS to be loaded. */
+.ui-helper-hidden { display: none; }
+
+
+
+ /* Connect Document Tab Styles */
+ 
+ #documentContentDiv 
+{
+   width: 600px; 
+   height: 500px;
+   border:1px solid #ccc;
+  
+}
+
+#documentTabDiv
+{
+   width: 600px; 
+   height: 500px;
+   border:1px solid #ccc;
+}
+.documentcontentTitle 
+{
+     font-family:Arial;
+     font-size:18px;
+     padding: 4px 10px ;
+     background-color: #ededed;
+     
+    /* border-top: 1px solid #ccc;
+     border-right: 1px solid #ccc;
+     border-left: 1px solid #ccc;*/
+     
+     width: 580px;
+}   
+ 
+ #documentOuterTable 
+{
+    width: 600px;
+    border-spacing: 0;
+    border-collapse:collapse;
+}
+ 
+ 
+#documentTable {
+ 
+ 
+ border-spacing: 0;
+ border-collapse:collapse;
+ 
+ 
+ 
+}
+
+#documentTableInnerDiv 
+{
+   overflow: auto;
+   height: 400px;
+   width: 600px;
+}   
+
+
+
+#documentOuterTable tr th
+{
+  
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  padding: 2px 10px;
+  text-align: left;
+  background-image: url(images/documentslist/bgTableHeader-documents.png);
+  background-repeat: repeat-x; 
+  font-size: 11px;
+  font-family:Arial;
+  height: 11px;
+  width: 25%;
+  
+}
+
+#document-table-body tr 
+{
+      
+ /* border: 1px solid #888;*/
+  font-size: 11px;
+  
+  font-weight: normal;
+  padding: 2px;
+  text-align: left;
+}
+
+/* Body
+ * ------------------------------------------------------------------------- */
+ 
+#documentTable tbody tr td {
+  cursor: default;
+  
+  padding: 4px 0px 4px 25px;
+  
+  width:25%;
+ 
+}
+
+#documentTable tbody tr
+{
+    width: 100%;
+    padding-right: 0px;
+   
+}
+
+.docTablenoteText 
+{
+    
+  
+
+ 
+  
+}
+
+.docTabletimeUploaded
+{
+  
+  
+  
+ }    
+
+.docTablefileSize
+{
+ 
+
+ 
+}    
+
+.documentTableHeaderName 
+{
+     padding-left: 60px;
+}   
+
+.documentTableHeaderDateModified
+{
+    padding-left: 50px;
+} 
+
+.documentTableHeaderSize 
+{
+   padding-left: 65px;
+}
+
+.documentTableHeaderDescription
+{
+     
+}   
+
+#documentTable tbody tr.even {
+  /*background-color: #ff0000;*/
+  background-color: #f6f7f9;
+  
+}
+
+#documentTable tbody tr.odd {
+  background-color: #fff;
+}
+
+#documentTable span {
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding: 2px 0px 2px 22px;
+}
+
+#documentTable span.file {
+  background-image: url(images/documentslist/page_white_text.png);
+  display:inline-block;
+  
+}
+
+#documentTable span.folder {
+  background-image: url(images/documentslist/folder.png);
+  
+}
+
+  
+
+.noDocumentsText 
+{
+    font-family: Segoe UI;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+}    
+

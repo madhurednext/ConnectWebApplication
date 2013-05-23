@@ -1,0 +1,12 @@
+body {background:none; background-color:#FFF;}
+#overlayHeader {background:url("images/bgOverlayTop.png") no-repeat; float:left; height:50px; margin:0; padding:0; position:relative; width:867px;}
+#overlayHeader .title {float:left; height:35px; margin:0 0 0 10px; position:relative; width: 500px;}
+#overlayHeader .title h1 {margin:8px 0 0; padding:0;}
+#overlayHeader .close {float:right; height:20px; margin:7px 7px 0 0; position:relative; width:20px;}
+#overlayContent {background:url("images/bgOverlayMiddle.png") no-repeat; float:left; height:395px; margin:0; padding:0; position:relative; width:867px;}
+#overlayContent .grid {background-color:White; float:left; height:360px; margin:4px 24px; overflow:none; position:relative; width:805px;}
+#overlayContent .pagination {background-color:White; float:right; height:14px; margin:2px 24px 0 0; position:relative; width:300px;}
+#overlayBottom {background:url("images/bgOverlayBottom.png") no-repeat; float:left; height:20px; margin:0; padding:0; position:relative; width:867px;}
+
+
+.gridContainer {margin:0 9px 6px -10px; padding:0px; overflow:auto;}

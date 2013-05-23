@@ -1,0 +1,118 @@
+﻿    <script type="text/html" id="clientDataTemplate">
+
+<div data-bind="if: (currentPersonPageTab == 'Contact Profile')">
+
+
+</div>
+
+{{if  viewModel.currenttab() == 1}}
+{{if viewModel.contactprofile() != null}}
+<div  data-bind="template: { name: 'Resultpanel', foreach: viewModel.contactprofile }" >
+</div>
+{{else}}
+<div>
+ <span class="noContactAssignment">&nbsp;&nbsp;&nbsp;No contact assignments.</span>
+</div>
+{{/if}}
+ 
+{{/if}}
+{{if  viewModel.currenttab() == 2}}
+  <h2 class="marginT15 marginBN05" >Upcoming Appointments</h2> 
+    {{if viewModel.upComingApts()!=null && viewModel.upComingApts().length > 0}}
+        <div class="upComingAptsDiv" data-bind="template: { name: 'UpComingAptTemplate', foreach: viewModel.upComingApts }">
+        </div>
+    {{else}}
+        <div class="infoService">   
+        <span class="noUpcomingAppointments">&nbsp;&nbsp;&nbsp;No Upcoming Appointments.</span>
+         <br />
+         <br />
+         </div>
+    {{/if}}
+    <p class=setAppointment><a  >${checkAppointmentUrl()}Set an Appointment</a></p>
+     
+      <h2 class="marginT15 marginBN05">Current Year Service Activity</h2>
+    {{if viewModel.curYearService()!=null && viewModel.curYearService().length > 0}}
+        <div data-bind="template: { name: 'ServiceActivityTemplate', foreach: viewModel.curYearService }">
+         </div>
+    {{else}}
+        <div class="infoService">   
+        <span class="recordNotAvailable">&nbsp;&nbsp;&nbsp;Information
+         not available. </span>
+         <br />
+         <br />
+         </div>
+    {{/if}}
+    <h2 class="marginT15 marginBN05">Prior Year Service Activity</h2> 
+    {{if viewModel.preYearService()!=null && viewModel.preYearService().length > 0}}
+         <div data-bind="template: { name: 'ServiceActivityTemplate', foreach: viewModel.preYearService }">
+        </div>
+    {{else}}
+        <div class="infoService">   
+        <span class="recordNotAvailable">&nbsp;&nbsp;&nbsp;Information
+         not available. </span>
+         <br />
+         <br />
+         </div>
+    {{/if}}
+{{/if}}
+{{if  viewModel.currenttab() == 3}}
+<div class="gridContainer " >
+{{if parseInt(viewModel.contactactivitylength())>0}}
+<table style="table-layout:auto;" cellpadding="0" cellspacing="0" border="0" id="example" >
+<thead  >
+<tr > 
+<th class="width20px">&nbsp;</th>
+<th style="width:75px;" ><a href="">Date</a></th>
+<th style="width:85px;" ><a href="">Contact Type</a></th>
+<th style="width:100px;" ><a href="">Title</a></th>
+<th style="width:95px;" ><a href="">Contact Made By</a></th>
+<th class="rightBorder"><a href="">Supporting Documents</a></th>
+</tr>
+ </thead>
+<tbody id="contacttable" style="top:25px;max-height:475px;"  data-bind="template: { name: 'ContactActivity', foreach: viewModel.contactactivity }">
+</tbody>
+</table>
+{{else}}
+ <span class="recordNotAvailable">&nbsp;&nbsp;&nbsp;No contact history available. </span>
+{{/if}}
+</div>
+{{/if}}
+
+{{if  viewModel.currenttab() == 4}}
+ {{if viewModel.docList()!=null && viewModel.docList().length > 0}}
+<div id="documentContentDiv" >
+
+<div class="documentcontentTitle">Client's Documents</div>
+
+<table id="documentOuterTable" >
+<tr>
+ <th><span class="documentTableHeaderName">Name</th>
+<th><span class="documentTableHeaderDateModified">Date Modified</th>
+<th><span class="documentTableHeaderSize">Size</th>
+<th><span class="documentTableHeaderDescription">Description</th>
+</tr>
+</table>
+
+<div id="documentTableInnerDiv" >
+  <table class="documentList" id="documentTable" >
+    <tbody id="document-table-body" data-bind="template: {
+name: 'documentTemplate',
+    foreach: viewModel.docList
+}" > </tbody>
+  </table>
+</div>
+  
+</div>
+
+{{else}}
+
+  <span class="noDocumentsText" data-bind="text: viewModel.docListErrorMessage" ></span>
+            <br />
+            <br />
+   
+{{/if}}
+
+{{/if}}
+</script>
+
+

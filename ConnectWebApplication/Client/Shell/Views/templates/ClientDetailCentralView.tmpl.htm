@@ -1,0 +1,164 @@
+﻿<script type="text/html" id="ClientDetailCentralView">
+
+ <div data-bind="foreach : $data.PersonInfoDetails">
+<div id="primaryColumn"  data-bind="attr: { personid: Id }" >
+
+<div class="primaryContainer"> <!-- Section I -->
+
+
+<div class="grayTopShort">
+
+<div class="grayTopContentShort">
+
+<div class="spanishDeceased" data-bind="foreach: $parent.personStatusImage"   >
+ 
+   <img data-bind="attr: { src: imageSrc }" border="0" />
+
+</div><!-- end Spanish Deceased -->
+
+</div><!-- end grayTopContentShort -->
+</div><!-- end grayTopShort -->
+
+
+<div class="grayMiddle">
+<div class="grayMiddleContent">
+<div class="grayContainer">
+
+    <h1 ><span data-bind="text: FirstName" ></span>
+        &nbsp;<span data-bind="text: LastName" ></span>
+        
+   <img class="closeImage"  src="Styles/images/ctrlClose.png" data-bind="click: $parent.onClosePersonClick" /></img></h1>
+
+	<div class="headerInfo">
+	<p >
+        <span >Last 4 SSN</span>
+        <br />
+        <span data-bind="text: Last4SSN" ></span>
+	</p>
+	</div>   <!-- End of  SSN Header Info -->
+	
+	<div class="headerInfo">  
+	<p>
+        <span>Date of Birth</span>
+        <br />
+        <span data-bind="text: DateOfBirthStr" ></span>
+	</p>
+	</div>  <!-- End of  Date oF Birth Header Info -->
+
+
+     <div class="headerInfoSpouse">
+		<p><span>Spouse</span><br />
+            <a href="#" class="clientHeaderSpouseLink" >
+            <span data-bind="text: SpouseFirstName" ></span>
+            <span data-bind="text: SpouseLastName" ></span>
+             </a>
+
+		</p>
+
+		<div class="spanishDeceased"  data-bind="foreach: $parent.spouseStatusImage"   >
+               <img class="spouseSpanishIndicator" data-bind="attr: { src: imageSrc }" border="0" />
+        </div> <!-- End of Spanish Deceased -->
+
+	</div> <!-- End of HeaderInfo Spouse-->
+
+    
+	<div class="headerInfo">
+		<p><span>Last 4 SSN</span><br />
+            <span data-bind="text: SpouseLast4SSN" ></span></p>
+	</div> <!-- End of Spouse SSN Header Info -->
+	
+	<div class="headerInfo">
+		<p><span>Date of Birth</span><br />
+             <span data-bind="text: SpouseDateOfBirthStr" ></span>
+         </p>
+	</div> <!-- End of Date of Birth Header Info -->
+
+    
+	<div class="headerTenure">
+		<p>
+		    <span class="tenure" data-bind="if: EnterpriseTenure">
+				    H&R Block <span class="tenuredata" data-bind="html: EnterpriseTenure" ></span>&nbsp;&nbsp;&nbsp;
+             </span>
+
+             <span class="tenure" data-bind="if: RetailTenure">
+				    Retail <span class="tenuredata" data-bind="html: RetailTenure" ></span>&nbsp;&nbsp;&nbsp;
+             </span>
+			
+		</p>
+	</div> <!-- End of Header Tenure -->
+	
+	<div class="clear">
+	
+	</div> <!-- End of Clear -->
+	
+	</div> <!-- End of grayContainer -->
+  </div>  <!-- End of grayMiddleContent -->
+
+</div>  <!-- End of grayMiddle -->
+
+
+<div class="grayBottom">
+	<div class="grayBottomContent">
+	</div><!-- End of grayBottomContent -->
+</div><!-- End of grayBottom -->
+
+<div class="clear">
+
+</div> <!-- End of Clear -->
+
+</div> <!-- End of PrimaryContainer  Section I-->
+
+
+
+<div class="currenttab" id="section1" > <!-- Section II -->
+		<div id="tabset" data-bind="with: $parent.personPageViewModel">
+		<ul data-bind="foreach: PersonDetailTabs">
+
+            <li data-bind="attr: { id: id }, click: onTabClick" ><a data-bind="text: tabName"></a></li>
+		
+		</ul>
+		</div>
+		
+        <div class="clear"></div>
+		
+</div> <!-- End of  SectionII -->
+
+
+
+<div class="primaryContainer"> <!-- Section III -->
+		<div class="grayTopShort">
+		
+			<div class="grayTopContentShort">
+			
+			</div> <!-- End of Gray Top Content Short -->
+		</div> <!-- End of Gray Top Short -->
+		
+		
+			
+		<div class="grayMiddle">
+				<div class="grayMiddleContent">
+					<!--TODO AFTER INITIAL SCREEN-->
+					<!--<div class="whiteContainer" data-bind="template: { name: 'clientDataTemplate' }" id="clientDataPanel">
+
+					</div>--> <!-- PersonViewModel is the parent below -->
+                  <div class="whiteContainer" data-bind="template: { name: 'PersonDetailTabContent', data: $parent}" id="clientDataPanel">
+                           
+                     </div>
+                    <!-- End of whiteContainer -->
+				</div> <!-- End of Gray Middle Content -->
+         
+		        <div class="clear">    </div>
+       </div> <!-- End of Gray Middle -->
+	   
+		<div class="grayBottom">
+			<div class="grayBottomContent"> </div> <!-- End of Gray Bottom Content -->
+		</div><!-- End of Gray Bottom -->
+		
+		<div class="clear"></div>
+
+
+</div> <!-- End of Primay Container Section III -->		
+
+</div><!-- End  of PrimaryColumn -->
+        </div>
+</script>

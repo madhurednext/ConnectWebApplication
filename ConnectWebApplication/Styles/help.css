@@ -1,0 +1,9 @@
+/* help style sheet */
+.hide {display:none;}
+div.clear {background:transparent none repeat scroll 0 0; clear:both; margin:0 !important; padding:0 !important;}
+body {background-color:#141D23; font-family:Helvetica, Arial, sans-serif; margin:20px; padding:0;}
+h1 {clear:both; color:#FFF; font-size:22px; font-weight:bold;}
+p {clear:both; color:#FFF; font-size:14px; font-weight:bold; line-height:20px; text-align:left;}
+img {float:left; margin:-12px 10px 16px;}
+.marginBottom26 {margin-bottom:26px;}
+.marginBottom28 {margin-bottom:28px;}
